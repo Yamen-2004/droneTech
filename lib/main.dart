@@ -1,5 +1,9 @@
 import 'package:drone_tech/onbiarding.dart';
-import 'package:drone_tech/screens/login.dart';
+import 'package:drone_tech/screens/SignUp_in/SignUpTwo.dart';
+import 'package:drone_tech/screens/SignUp_in/login.dart';
+import 'package:drone_tech/screens/SignUp_in/password.dart';
+import 'package:drone_tech/screens/SignUp_in/signUp.dart';
+import 'package:drone_tech/screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,6 +20,10 @@ class droneTech extends StatelessWidget {
       routes: {
         '/': (context) => onBoarding(),
         "/login": (context) => login(),
+        "/signup": (context) => signup(),
+        "/signup2": (context) => SignUpTwo(),
+        "/password": (context) => password(),
+        "/home": (context) => home(),
       },
     );
   }

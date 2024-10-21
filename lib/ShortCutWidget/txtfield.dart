@@ -8,10 +8,11 @@ class txtfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 60,
       margin: const EdgeInsets.only(top: 10),
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: TextField(
-        textDirection: TextDirection.rtl,
+        textAlign: TextAlign.right,
         obscureText: obscure,
         decoration: InputDecoration(
           hintText: hint,
