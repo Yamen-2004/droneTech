@@ -53,7 +53,8 @@ class droneInfo {
     },
     {
       "name": "DJI Mavic 3 Pro",
-      "images": ["assets/images/drons/drone5/dron5pic1.png"
+      "images": [
+      "assets/images/drons/drone5/dron5pic1.png",
       "assets/images/drons/drone5/dron5pic2.png",
       "assets/images/drons/drone5/dron5pic3.png",
       "assets/images/drons/drone5/dron5pic4.png"],
