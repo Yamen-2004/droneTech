@@ -20,22 +20,24 @@ class _homeState extends State<home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          toolbarHeight: 120,
+          toolbarHeight: 85,
           backgroundColor: Colors.white,
-          leading: Column(
-            children: [
-              const Spacer(),
-              GestureDetector(
-                child: Image.asset("assets/images/profile.png"),
-                onTap: () {
-                  Navigator.pushNamed(context, "/profile");
-                },
-              ),
-              const Text("الملف الشخصي",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold)),
-            ],
+          leading: Container(
+            width: 88,
+            margin: const EdgeInsets.only(left: 10),
+            child: Column(
+              children: [
+                const Spacer(),
+                GestureDetector(
+                  child: Image.asset("assets/images/profile.png",
+                      fit: BoxFit.contain),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/profile");
+                  },
+                ),
+                const Spacer(),
+              ],
+            ),
           ),
           actions: [
             Row(
@@ -49,7 +51,7 @@ class _homeState extends State<home> {
           ],
         ),
         body: Padding(
-          padding: const EdgeInsets.all(17),
+          padding: const EdgeInsets.all(30),
           child: ListView.builder(
               itemCount: droneInfo().data.length,
               itemBuilder: (context, index) {
@@ -60,8 +62,8 @@ class _homeState extends State<home> {
                     ),
                     Container(
                       child: GestureDetector(
-                          onTap: () =>
-                              Navigator.pushNamed(context, routes[index]),
+                          onTap: () => Navigator.pushNamed(context, "/showData",
+                              arguments: droneInfo().data[index]),
                           child: Image.asset(
                               droneInfo().data[index]["images"][0])),
                     ),
@@ -73,6 +75,7 @@ class _homeState extends State<home> {
                       child: Text(
                         droneInfo().data[index]["name"],
                         style: TextStyle(
+                            fontFamily: "Cairo",
                             color: Colors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
@@ -87,12 +90,12 @@ class _homeState extends State<home> {
                           droneInfo().data[index]["description"],
                           style: TextStyle(
                               color: Colors.grey,
-                              fontSize: 20,
+                              fontSize: 18,
                               fontWeight: FontWeight.w700),
-                              
                         )),
-                        SizedBox(height: 10,),
-                  
+                    SizedBox(
+                      height: 10,
+                    ),
                   ],
                 );
               }),
